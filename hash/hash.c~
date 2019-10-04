@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define NUM 10;
+
+struct list{
+  int value;
+  struct list* next;
+};
+int main(){
+  struct list* head;
+  head = malloc(sizeof(struct list));
+  head->value = rand();
+  struct list* prev;
+  prev = head;
+  for (int i=1; i<NUM; i++){
+    struct list* new = malloc(sizeof(struct list));
+    prev->next = new;
+    new->value = rand();
+    prev = new;
+  }
+  new->next = NULL;
+}
