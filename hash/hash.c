@@ -53,7 +53,19 @@ int main(){
   }
 
   // visualizing values stored in hash
+  printf("%s", "[");
   for(int i=0; i<BUCKET; i++){
-    printf("%i\n", hash[i].value);
-  }  
+    if (hash[i].assigned == true){
+      printf("%i", hash[i].value);
+    }
+    else{
+      printf("%s", "NULL");
+    }
+    if (i == BUCKET-1){
+      printf("%s", "]");
+    }
+    else{
+      printf("%s", ", ");
+    }
+  }
 }
